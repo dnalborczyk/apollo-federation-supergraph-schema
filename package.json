@@ -1,0 +1,35 @@
+{
+  "name": "schema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:supergraph-schema && npm run build:schema-ast && npm run build:codegen && npm run build:all && npm run copy:all",
+    "build:all": "npm run build --workspaces",
+    "build:schema-ast": "node .scripts/buildSchemaAstFromSdl.mjs",
+    "build:codegen": "graphql-codegen --config graphql-codegen.yml",
+    "build:supergraph-schema": "rover supergraph compose --config supergraph.yaml > schema-gateway/src/supergraph-gateway.graphql",
+    "copy:all": "npm run copy --workspaces",
+    "prettier": "prettier",
+    "prettier:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "workspaces": [
+    "schema-gateway",
+    "schema-inventory",
+    "schema-products",
+    "schema-users"
+  ],
+  "devDependencies": {
+    "@apollo/rover": "0.3.0",
+    "@graphql-codegen/cli": "2.2.2",
+    "@graphql-codegen/typescript": "2.3.0",
+    "@graphql-codegen/typescript-resolvers": "2.4.0",
+    "copyfiles": "2.4.1",
+    "prettier": "2.4.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.4.4"
+  }
+}

@@ -1,0 +1,41 @@
+documents: null
+
+generates:
+  ./schema-inventory/src/inventory.ts:
+    config:
+      federation: true
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: schema-inventory/src/*.graphql
+
+  ./schema-products/src/products.ts:
+    config:
+      federation: true
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: schema-products/src/*.graphql
+
+  ./schema-users/src/users.ts:
+    config:
+      federation: true
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: schema-users/src/*.graphql
+
+hooks:
+  afterOneFileWrite:
+    - npx prettier --write
+
+overwrite: true
