@@ -4,13 +4,12 @@ type Product
   @key(fields: "id")
   @key(fields: "sku package")
   @key(fields: "sku variation { id }") {
-  id: ID! @tag(name: "hi from products")
-  sku: String @tag(name: "hi from products")
-  package: String
-  variation: ProductVariation
-  dimensions: ProductDimension
-
   createdBy: User @provides(fields: "totalProductsCreated")
+  dimensions: ProductDimension
+  id: ID! @tag(name: "hi from products")
+  package: String
+  sku: String @tag(name: "hi from products")
+  variation: ProductVariation
 }
 
 type ProductVariation {
@@ -30,4 +29,8 @@ extend type Query {
 extend type User @key(fields: "email") {
   email: ID! @external
   totalProductsCreated: Int @external
+}
+
+input Foo {
+  foo: String
 }

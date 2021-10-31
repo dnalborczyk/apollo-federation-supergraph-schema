@@ -7,6 +7,26 @@ module.exports = {
       files: ['*.graphql'],
       parser: '@graphql-eslint/eslint-plugin',
       plugins: ['@graphql-eslint'],
+      rules: {
+        // TODO FIXME add more rules
+        '@graphql-eslint/alphabetize': [
+          'error',
+          {
+            arguments: [
+              'Field',
+              'FieldDefinition',
+              'Directive',
+              'DirectiveDefinition',
+            ],
+            fields: [
+              'InterfaceTypeDefinition',
+              'InputObjectTypeDefinition',
+              'ObjectTypeDefinition',
+            ],
+            values: ['EnumTypeDefinition'],
+          },
+        ],
+      },
     },
     {
       extends: [
