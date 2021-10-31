@@ -1,6 +1,8 @@
 dist
 node_modules
 
+**/src/supergraph-gateway.graphql
+
 **/src/**/*.json
 **/src/**/*.json.d.ts
 **/src/**/*.types.ts
