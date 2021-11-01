@@ -3,29 +3,23 @@
 module.exports = {
   overrides: [
     {
-      extends: ['plugin:prettier/recommended'],
+      extends: [
+        'plugin:prettier/recommended',
+        'plugin:@graphql-eslint/recommended',
+      ],
       files: ['*.graphql'],
       parser: '@graphql-eslint/eslint-plugin',
+      parserOptions: {
+        operations: './_graphql-eslint.graphql',
+        schema: './schema-gateway/src/supergraph-gateway.graphql',
+        // schema: '**/src/**/*.graphql',
+      },
       plugins: ['@graphql-eslint'],
       rules: {
-        // TODO FIXME add more rules
-        '@graphql-eslint/alphabetize': [
-          'error',
-          {
-            arguments: [
-              'Field',
-              'FieldDefinition',
-              'Directive',
-              'DirectiveDefinition',
-            ],
-            fields: [
-              'InterfaceTypeDefinition',
-              'InputObjectTypeDefinition',
-              'ObjectTypeDefinition',
-            ],
-            values: ['EnumTypeDefinition'],
-          },
-        ],
+        '@graphql-eslint/executable-definitions': 'off',
+        '@graphql-eslint/known-directives': 'off',
+        '@graphql-eslint/possible-type-extension': 'off',
+        '@graphql-eslint/strict-id-in-types': 'off',
       },
     },
     {

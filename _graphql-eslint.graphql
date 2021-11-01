@@ -1,0 +1,8 @@
+# dummy operation for graphql-eslint bug
+# this file can be deleted when the graphql-eslint plugin
+# distingusihes beween schema and operation recomendaions
+query allProducts {
+  allProducts {
+    id
+  }
+}
