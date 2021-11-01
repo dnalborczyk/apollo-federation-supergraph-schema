@@ -1,7 +1,7 @@
 documents: null
 
 generates:
-  ./schema-inventory/src/inventory.ts:
+  ./schema-inventory/src/inventory.types.ts:
     config:
       federation: true
       immutableTypes: true
@@ -12,7 +12,7 @@ generates:
       - typescript-resolvers
     schema: schema-inventory/src/*.graphql
 
-  ./schema-products/src/products.ts:
+  ./schema-products/src/products.types.ts:
     config:
       federation: true
       immutableTypes: true
@@ -23,7 +23,7 @@ generates:
       - typescript-resolvers
     schema: schema-products/src/*.graphql
 
-  ./schema-users/src/users.ts:
+  ./schema-users/src/users.types.ts:
     config:
       federation: true
       immutableTypes: true
