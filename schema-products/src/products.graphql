@@ -30,7 +30,3 @@ extend type User @key(fields: "email") {
   email: ID! @external
   totalProductsCreated: Int @external
 }
-
-input Foo {
-  foo: String
-}
