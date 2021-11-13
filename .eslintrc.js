@@ -20,6 +20,9 @@ module.exports = {
         '@graphql-eslint/known-directives': 'off',
         '@graphql-eslint/possible-type-extension': 'off',
         '@graphql-eslint/strict-id-in-types': 'off',
+
+        // not part of "recommended" config setting:
+        '@graphql-eslint/no-unreachable-types': 'error',
       },
     },
     {
