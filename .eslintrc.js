@@ -40,6 +40,10 @@ module.exports = {
         project: ['./tsconfig.json'],
       },
       plugins: ['@typescript-eslint'],
+      rules: {
+        // TODO FIXME file bug?
+        'no-restricted-exports': 'off',
+      },
     },
   ],
 }
