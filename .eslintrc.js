@@ -5,7 +5,7 @@ module.exports = {
     {
       extends: [
         'plugin:prettier/recommended',
-        'plugin:@graphql-eslint/recommended',
+        'plugin:@graphql-eslint/schema-recommended',
       ],
       files: ['*.graphql'],
       parser: '@graphql-eslint/eslint-plugin',
@@ -20,6 +20,10 @@ module.exports = {
         '@graphql-eslint/known-directives': 'off',
         '@graphql-eslint/possible-type-extension': 'off',
         '@graphql-eslint/strict-id-in-types': 'off',
+        // version 3.x recommendet settings
+        '@graphql-eslint/naming-convention': 'off',
+        '@graphql-eslint/no-hashtag-description': 'off',
+        '@graphql-eslint/require-description': 'off',
 
         // not part of "recommended" config setting:
         '@graphql-eslint/no-unreachable-types': 'error',
